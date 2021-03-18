@@ -1,0 +1,28 @@
+body {
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 65px;
+    color: orange;
+    font-family: sans-serif;
+}
+
+p {
+    font-weight: 600;
+    font-size: 48px;
+}
+
+ul {
+    background-color: orchid;
+}
+
+li {
+    font-style: italic;
+    text-align: center;
+    text-decoration: none;
+}
+
+.cor-fundo {
+    background-color: orchid;
+}
