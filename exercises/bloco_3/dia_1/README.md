@@ -1,6 +1,6 @@
 # trybe-exercises
 
-   ##Exercícios
+   ## Exercícios
 
  - Crie uma lista das pessoas que você já fez amizade na Trybe
  - Adicione uma imagem que venha de uma URL externa.
