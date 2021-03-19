@@ -1,0 +1,29 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+.super-mario {
+    width: 520px;
+}
+
+.goomba {
+    width: 520px;
+}
+
+.baloon {
+    width: 200px;
+    
+}
+
+.bowser {
+    width: 520px;
+}
+
+.word {
+    position: absolute;
+    z-index: 1;
+    bottom: -710px;
+    right: 1650px;
+    
+}
