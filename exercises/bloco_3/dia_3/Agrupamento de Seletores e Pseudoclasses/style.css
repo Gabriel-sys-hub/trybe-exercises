@@ -1,0 +1,23 @@
+.center {
+    text-align: center;
+}
+ol, ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+
+}
+
+p {
+    text-align: center;
+}
+
+ol:hover {
+    background-color: blanchedalmond;
+}
+
+.font-change:active {
+    font-family: monospace;
+}

@@ -1,0 +1,63 @@
+.background-color {
+    background-color: rgb(182, 182, 79);
+    width: 50%;
+}
+
+.number-color {
+    color: green;
+}
+
+.transform {
+    text-transform: uppercase;
+}
+
+.color-red {
+    color: red;
+}
+
+.border-and-size {
+    font-size: 40px;
+    border: solid 1px black;
+}
+
+li {
+    font-size: 20px;
+}
+
+.font-weigth {
+    font-weight: bolder;
+}
+
+.color {
+    color: blue;
+}
+
+.background-pink {
+    background-color: pink;
+    width: 500px;
+}
+
+.stack:hover {
+    color:orange;
+    font-weight: bolder;
+}
+
+.w3:hover {
+    color: green;
+    font-weight: bolder;
+}
+
+.mdn:hover {
+    color:black;
+    font-weight: bolder;
+}
+
+.dev:hover {
+    color:yellow;
+    font-weight: bolder;
+}
+
+.trybe:hover {
+    color:green;
+    font-weight: bolder;
+}
