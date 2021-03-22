@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color:  rgb(107, 33, 33);
+}
+
+#punch {
+    color: white;
+}
+
+.navgator-links {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    background-color: rgb(22, 64, 88);
+}
+
+.header-flex {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(61, 19, 19);
+    padding: 10px;
+}
+
+.links-list {
+    display: flex;
+}
+
+.link {
+    margin: 20px;
+}
+
+ul, a {
+    list-style: none;
+    text-decoration: none;
+}
+
+.navgator-links a {
+    color: white;
+}
+
+#subtitle {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.main-article {
+    background-color:rgb(107, 33, 33);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.main-article p {
+    color: white;
+}
+
+.stomatopoda {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-article .stomatopoda img {
+    width: 600px;
+    height: 400px;
+    margin: 10px
+}
+
+.image-description {
+    max-width: 600px;
+    margin: 10px;
+}
+
+.info-article {
+    text-align: center;
+    background-color: rgb(22, 64, 88);
+}
+
+.info-article span {
+    font-weight: 800;
+}
+
+.info-article ul li:first-child{
+    font-style: italic;
+}
+
+.info-article ul li {
+    margin: 10px;
+    font-size: 25px;
+    padding: 20px;
+}
+
+.footer {
+    background-color:rgb(58, 17, 17);
+    padding: 20px
+}
+
+.footer .references-links ul li a{
+    text-decoration: none;
+    color: white;
+    margin: 30px;
+}
+
+.footer p {
+    text-align: end;
+}
+
+
+.footer p span {
+    color: white;
+    font-weight: 900;
+}
