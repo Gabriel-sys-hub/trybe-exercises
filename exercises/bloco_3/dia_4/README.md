@@ -1,8 +1,9 @@
 # Site Sobre Stomatopoda
 
-*# O exercicio proposto foi criar um site, com algumas informações para treinar as tags de forma semantica no html.*
+*O exercicio proposto foi criar um site, com algumas informações para treinar as tags de forma semantica no html.*
 
-![Imagem do Projeto](https://ibb.co/VJQKVSP)
+![Foto do Projeto](https://user-images.githubusercontent.com/77814658/112057770-7b6b6f80-8b38-11eb-9139-6c966f4b4f75.jpg)
+
 
 # Markdown
 
