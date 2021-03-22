@@ -1,6 +1,6 @@
 # Site Sobre Stomatopoda
 
-*## O exercicio proposto foi criar um site, com algumas informações para treinar as tags de forma semantica no html.*
+*# O exercicio proposto foi criar um site, com algumas informações para treinar as tags de forma semantica no html.*
 
 
 
