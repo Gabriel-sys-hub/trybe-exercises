@@ -2,7 +2,7 @@
 
 *# O exercicio proposto foi criar um site, com algumas informações para treinar as tags de forma semantica no html.*
 
-![Imagem do Projeto](https://www.shutterstock.com/editor/design/15967228?share_code=598095012894296cf4ecabe89718ce76)
+![Imagem do Projeto](https://ibb.co/VJQKVSP)
 
 # Markdown
 
