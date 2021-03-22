@@ -53,13 +53,44 @@ ul, a {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+#subtitle::before {
+    content: "";
+    display: block;
+    position: relative;
+    left: 650px;
+    top: 36px;
+    width: 20px;
+    background-color: #e1e1e1;
+    height: 20px;
+}
+
+#first-subtitle {
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#first-subtitle::before {
+    content: "";
+    display: block;
+    position: relative;
+    left: -40px;
+    top: 36px;
+    width: 20px;
+    background-color: #e1e1e1;
+    height: 20px;
+}
 
 
 .main-article {
-    background-color:rgb(107, 33, 33);
+    background-color:rgb(5, 5, 5);
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    padding: 20px;
 }
 
 .main-article p {
@@ -145,6 +176,13 @@ ul, a {
     justify-content: center;
 }
 
+.stomatopod img {
+    width: 10em;
+    border-radius: 50%;
+    height: 10em;
+    margin: 10px;
+}
+
 .subtitle {
     color: white;
 }
@@ -160,14 +198,12 @@ ul, a {
     content: "";
     display: block;
     position: relative;
-    left: 403px;
-    top: 55px;
-    width: 430px;
+    left: 620px;
+    top: 32px;
+    width: 20px;
     background-color: #e1e1e1;
-    height: 2px;
+    height: 20px;
 }
-
-
 
 
 .general-info {
