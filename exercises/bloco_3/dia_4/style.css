@@ -1,0 +1,216 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color:  rgb(107, 33, 33);
+}
+
+#punch {
+    color: white;
+}
+
+.navgator-links {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    background-color: rgb(22, 64, 88);
+}
+
+.header-flex {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(61, 19, 19);
+    padding: 10px;
+}
+
+.links-list {
+    display: flex;
+}
+
+.link {
+    margin: 20px;
+}
+
+ul, a {
+    list-style: none;
+    text-decoration: none;
+}
+
+.navgator-links a {
+    color: white;
+}
+
+#subtitle {
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#subtitle::before {
+    content: "";
+    display: block;
+    position: relative;
+    left: 650px;
+    top: 36px;
+    width: 20px;
+    background-color: #e1e1e1;
+    height: 20px;
+}
+
+#first-subtitle {
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#first-subtitle::before {
+    content: "";
+    display: block;
+    position: relative;
+    left: -40px;
+    top: 36px;
+    width: 20px;
+    background-color: #e1e1e1;
+    height: 20px;
+}
+
+
+.main-article {
+    background-color:rgb(5, 5, 5);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.main-article p {
+    color: white;
+}
+
+.stomatopoda {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-article .stomatopoda img {
+    width: 600px;
+    height: 400px;
+    margin: 10px
+}
+
+.image-description {
+    max-width: 600px;
+    margin: 10px;
+}
+
+.info-article {
+    text-align: center;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: rgb(22, 64, 88);
+}
+
+.info-article span {
+    font-weight: 800;
+}
+
+.info-article ul li:first-child{
+    font-style: italic;
+}
+
+.info-article ul li {
+    margin: 10px;
+    font-size: 25px;
+    padding: 20px;
+}
+
+.footer {
+    background-color:rgb(58, 17, 17);
+    padding: 20px
+}
+
+.footer .references-links ul li a{
+    text-decoration: none;
+    color: white;
+    margin: 30px;
+}
+
+.footer p {
+    text-align: end;
+}
+
+
+.footer p span {
+    color: white;
+    font-weight: 900;
+}
+
+.interesting-facts {
+    margin: 20px;
+    padding: 20px
+}
+
+.about p {
+    max-width: 520px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+}
+
+.about div{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stomatopod img {
+    width: 10em;
+    border-radius: 50%;
+    height: 10em;
+    margin: 10px;
+}
+
+.subtitle {
+    color: white;
+}
+
+.title {
+    font-size: 40px;
+    text-align: center;
+    margin: 20px;
+    color: white;
+}
+
+.title::before {
+    content: "";
+    display: block;
+    position: relative;
+    left: 620px;
+    top: 32px;
+    width: 20px;
+    background-color: #e1e1e1;
+    height: 20px;
+}
+
+
+.general-info {
+    padding: 20px;
+}
+
+.references-links ul li h1 {
+    margin: 29px;
+    color: white;
+}
