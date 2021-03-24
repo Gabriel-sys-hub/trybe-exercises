@@ -4,6 +4,7 @@ let nota3 = "C"
 let nota4 = "D"
 let nota5 = "E"
 let nota6 = "F"
+let erro = "Erro, nota não existe!"
 
 let notaEmPorcentagem = -100;
 
@@ -20,8 +21,7 @@ if (notaEmPorcentagem >= 90) {
 } else if (notaEmPorcentagem < 50) {
   console.log(nota6)
 } else if (notaEmPorcentagem < 0 || notaEmPorcentagem > 100) {
-  console.log("Erro, nota não existe!")
+  console.log(erro)
 } else {
   console.log("Não use letras no lugar das notas")
 }
-
