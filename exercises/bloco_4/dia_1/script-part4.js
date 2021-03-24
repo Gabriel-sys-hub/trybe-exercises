@@ -9,4 +9,7 @@ if (nota >= 80) {
  console.log("Você foi reprovado(a).");
 }
 
+// nota = 70;
+// nota = 50;
+
 
