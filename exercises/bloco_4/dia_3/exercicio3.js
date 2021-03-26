@@ -1,15 +1,8 @@
-let n = 5
-
-for (let index = 0; index < n; index++) {
-  if (index === 0) {
-    console.log("    *")
-  } else if (index === 1) {
-    console.log("   **")
-  } else if (index === 2) {
-    console.log("  ***")
-  } else if (index === 3) {
-    console.log(" ****")
-  } else {
-    console.log("*****")
+let n = 5;
+  for (let i = 1; i <= n; i++) {
+    let str = ' '.repeat(n - i);
+    let str2 = '*'.repeat(i * 2 - i)
+    console.log(str + str2);
   }
-}
+
+

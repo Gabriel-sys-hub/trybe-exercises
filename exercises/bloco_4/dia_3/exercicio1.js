@@ -1,5 +1,6 @@
 let n = 5
 
-for (let index = 0; index < n; index++) {
-  console.log("*****")
+for (let index = 1; index < n; index++) {
+  let str = '*'.repeat(5)
+  console.log(str)
 }
