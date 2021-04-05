@@ -58,13 +58,13 @@
         changeText();
         
         function changeColor() {
-          let changeSquareColor = document.querySelector('.main-content');
+          let changeSquareColor = document.getElementsByClassName('main-content')[0];
           changeSquareColor.style.backgroundColor = 'rgb(76,164,109'
         }
         changeColor();
 
         function changeColor2() {
-          let changeSquare2 = document.querySelector('.center-content').style.backgroundColor = 'white';
+          let changeSquare2 = document.getElementsByClassName('center-content')[0].style.backgroundColor = 'white';
         }
         changeColor2();
 
@@ -74,13 +74,18 @@
         correctText();
 
         function allLetters() {
-          let changeTextM = document.getElementsByTagName('p')[0];
+          let changeTextM = document.getElementsByTagName('p');
+          for(let index = 0; index < changeTextM.length; index += 1) {
+            changeTextM[index].style.textTransform = 'uppercase'
+          }
         }
         allLetters();
 
         function showAllContent() {
-          let content = document.querySelector('p').innerText;
-          console.log(content);
+          let content = document.getElementsByTagName('p');
+          for(let index = 0; index < content.length; index += 1) {
+            console.log(content[index].innerText)
+          }
         }
         showAllContent();
     </script>
