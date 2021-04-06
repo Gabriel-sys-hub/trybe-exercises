@@ -8,8 +8,11 @@ console.log(elementoOndeVoceEsta.parentElement.innerText);
 console.log(elementoOndeVoceEsta.nextElementSibling)
 console.log(document.querySelector('#pai').children[2]);
 
-let newDiv = document.createElement('div');
-console.log(elementoOndeVoceEsta.appendChild('div'))
-let newChildForFilho = document.appendChild(elementoOndeVoceEsta.firstElementChild)
 
-newChildForFilho.nextElementSibling;
+
+let paiDoPai = document.querySelectorAll('#paiDoPai');
+
+for (let index = 0; index < paiDoPai.length; index += 1) {
+  let element = paiDoPai[index];
+  paiDoPai.removeChild();
+}
