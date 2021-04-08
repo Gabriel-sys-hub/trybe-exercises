@@ -3,7 +3,7 @@ const divDois = document.getElementById('divDois');
 const divTres = document.getElementById('divTres');
 const input = document.getElementById('input');
 const myWebpage = document.getElementById('mySpotrybefy');
-const classTeste = document.querySelectorAll('.teste');
+const mainHeader = document.getElementById('main-header');
 /*
  Copie esse arquivo e edite apenas ele;
  Crie uma função que adicione a classe 'tech' ao elemento selecionado;
@@ -18,44 +18,65 @@ a cor do mesmo;
 
 Segue abaixo um exemplo do uso de event.target:
 */
-function activeTab(index) {
-  classTeste.forEach((section) => {
-    section.classList.remove('tech');
-  })
-  classTeste[index].classList.add('tech');
-}
-
-classTeste.forEach((itemMenu, index) => {
-  itemMenu.addEventListener('click', () => {
-    activeTab(index);
-  })
-})
-
-input.addEventListener('change', updateValue);
-function updateValue(e) {
-  divUm.textContent = e.target.value;
-}
-
-function redirection() {
-  window.location.href = 'https://github.com/Gabriel-sys-hub'
-}
-
-myWebpage.addEventListener('dblclick', redirection)
-
-function changeColor(event) {
-  event.target.style.color = 'green'
-}
-
-myWebpage.addEventListener('mouseover', changeColor)
-
 function resetText(event) {
-  // O Event é passado como um parâmetro para a função.
   event.target.innerText = 'Opção reiniciada';
-  // O event possui várias propriedades, porém a mais usada é o event.target,
-  // que retorna o objeto que disparou o evento.
 }
 
 divUm.addEventListener('dblclick', resetText);
-// Não precisa passar o parâmetro dentro do addEventListener. O próprio
-// navegador fará esse trabalho por você, não é legal? Desse jeito, o
-// event.target na nossa função retornará o objeto 'divUm'.
+divDois.addEventListener('dblclick', resetText);
+divTres.addEventListener('dblclick', resetText);
+
+let selectedTech = divUm;
+
+function selectTech(e) {
+  if (e.target === selectedTech) {
+    return;
+  }
+
+  selectedTech.classList.remove('tech');
+  e.target.classList.add('tech');
+  selectedTech = e.target;
+
+  input.value = '';
+
+  switch (e.target.id) {
+    case 'divUm':
+      input.placeholder = 'Alterar a primeira tecnologia';
+      break;
+    case 'divDois':
+      input.placeholder = 'Alterar a segunda tecnologia';
+      break;
+    case 'divTres':
+      input.placeholder = 'Alterar a terceira tecnologia';
+      break;
+  }
+
+  input.focus();
+}
+
+divUm.addEventListener('click', selectTech);
+divDois.addEventListener('click', selectTech);
+divTres.addEventListener('click', selectTech);
+
+function changeTechText(e) {
+  selectedTech.innerText = e.target.value;
+}
+
+input.addEventListener('input', changeTechText);
+
+function redirectToTrybeHome() {
+  window.open('https://betrybe.com', '_blank');
+}
+
+myWebpage.addEventListener('dblclick', redirectToTrybeHome);
+
+function togglePulsingGradient(e) {
+  if (e.type === 'mouseover') {
+    mainHeader.classList.add('pulsing');
+  } else {
+    mainHeader.classList.remove('pulsing');
+  }
+}
+
+mainHeader.addEventListener('mouseover', togglePulsingGradient);
+mainHeader.addEventListener('mouseleave', togglePulsingGradient);

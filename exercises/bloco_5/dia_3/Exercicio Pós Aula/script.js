@@ -26,10 +26,12 @@ for(let index = 0; index < 33; index += 1) {
   uList.appendChild(listOfLi)
   listOfLi.classList.add('day');
   listOfLi.innerHTML = dezDaysList[index]
-  if(dezDaysList[index] === 24 || dezDaysList[index] === 25 || dezDaysList[index] === 31) {
+  if(dezDaysList[index] === 24 || dezDaysList[index] === 31) {
     listOfLi.classList.add('holiday')
-  } else if (dezDaysList[index] === 4 || dezDaysList[index] === 11 || dezDaysList[index] === 18 || dezDaysList[index] === 25) {
+  } else if (dezDaysList[index] === 4 || dezDaysList[index] === 11 || dezDaysList[index] === 18) {
     listOfLi.classList.add('friday')
+  } else if (dezDaysList[index] === 25) {
+    listOfLi.classList.add('friday', 'holiday')
   }
 }
 
@@ -46,13 +48,20 @@ function holiday() {
 }
 
 function changeColors() {
- for(let index = 0; index < listOfEveryHoliday.length; index += 1) {
-  listOfEveryHoliday[index].style.backgroundColor = 'darkred'
- }
+  listOfEveryHoliday.forEach((section) => {
+    section.style.color = 'red';
+  })
+}
+
+function removeColors() {
+  listOfEveryHoliday.forEach((section) => {
+    section.style.color = 'grey'
+  })
 }
 
 
 buttom.addEventListener('click', changeColors);
+buttom.addEventListener('dblclick', removeColors)
 holiday();
 
 
@@ -64,13 +73,22 @@ function friday() {
 
 
 function changeText() {
-  for(let index = 0; index < listOfEveryHoliday.length; index += 1) {
-    listOfEveryFriday[index].innerHTML = 'XABLAUUUU'
-   }
-    buttomFriday.addEventListener('change', changeText); 
+  listOfEveryFriday.forEach((section) => {
+    section.innerText = 'XABLAAAAU'
+  })
 }
 
+function changeBack() {
+  listOfEveryFriday.forEach((section) => {
+    section.innerText = parseInt(section.nextElementSibling.innerText) - 1;
+  })
+}
+console.log(listOfEveryFriday)
+
 buttomFriday.addEventListener('click', changeText )
+buttomFriday.addEventListener('dblclick', changeBack)
+
+
 friday();
 
 let listOfLisArray = document.querySelectorAll('.day');
@@ -88,6 +106,16 @@ function activeTab(index) {
   listOfLisArray[index].classList.add('zoom');
 }
 
+function desativeTab(index) {
+    listOfLisArray[index].classList.remove('zoom')
+}
+
+listOfLisArray.forEach((itemMenu, index) => {
+  itemMenu.addEventListener('mouseout', () => {
+    desativeTab(index)
+  })
+})
+
 listOfLisArray.forEach((itemMenu, index) => {
   itemMenu.addEventListener('mouseover', () => {
     activeTab(index);
@@ -99,8 +127,11 @@ let addButton = document.querySelector('#btn-add');
 
 function tasks() {
   let span = document.createElement('span');
+  let li = document.createElement('li');
+  
+  li.appendChild(span);
   let inputValue = document.getElementById('task-input').value;
-  let text = document.createTextNode(inputValue);
+  let text = document.createTextNode(`\n${inputValue}`);
   span.appendChild(text);
   if (inputValue === '') {
     alert('You must write something!')
@@ -108,5 +139,24 @@ function tasks() {
   myTasks.appendChild(span)
   document.getElementById('task-input').value = ''
 }
+let newDivColor = document.createElement('div');
+
+function taskColor() {
+  newDivColor = document.createElement('div');
+  let randomColor = `#${Math.floor(Math.random()*16777215).toString(16)}` 
+  newDivColor.style.backgroundColor = randomColor
+  myTasks.appendChild(newDivColor)
+  newDivColor.classList.add('task')
+}
 
 addButton.addEventListener('click', tasks)
+addButton.addEventListener('click', taskColor)
+
+let myTask = document.querySelectorAll('.my-tasks')
+
+newDivColor.addEventListener('click', (event) => {
+  if(event.target.classList('task')) {
+    event.target.classList.add('selected')
+  }
+})
+

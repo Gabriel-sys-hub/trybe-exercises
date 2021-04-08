@@ -68,3 +68,17 @@ input:focus {
 .tech {
   transform: translateY(-20px);
 }
+
+.pulsing {
+  animation: pulse 1.5s linear infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1.00) }
+  25% { transform: scale(1.25) }
+  45% { transform: scale(1.05) }
+  58% { transform: scale(1.25) }
+  71% { transform: scale(1.05) }
+  84% { transform: scale(1.25) }
+  100% { transform: scale(1.00) }
+}
