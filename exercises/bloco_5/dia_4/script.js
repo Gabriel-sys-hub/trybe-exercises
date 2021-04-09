@@ -1,45 +1,43 @@
 let bgColor;
+let container = document.getElementById('container');
+let span = document.getElementById('span');
+let textColor = document.getElementById('textColor');
+let fontSizes = document.getElementById('fontSize');
+let textHeight = document.getElementById('textHeight');
+let fontFamily = document.getElementById('fontStyle')
+let bodyColor = document.body;
 
-window.onload = function theme() {
-  document.body.style.backgroundColor = 'white';
-  localStorage.setItem('bgcolour', 1);
+function colours() {
+  if(localStorage.getItem('bgcolor') === 'black') {
+    bodyColor.style.backgroundColor = 'black';
+    textColoursBack()
+  }
 }
 
-let container = document.getElementById('container');
-function colours() {
+
+function coloursBack() {
   localStorage.setItem('bgcolor', container.value);
-  if(localStorage.getItem('bgcolor') === '1') {
-    document.body.style.backgroundColor = 'black';
+  if(localStorage.getItem('bgcolor') === 'white') {
+    document.body.style.backgroundColor = 'white';
     textColours()
   }
 }
 
-window.onload = function textColorTheme() {
-  document.body.style.color = 'black';
-  localStorage.setItem('textColour', 1)
-}
-
-let span = document.getElementById('span');
-
-let textColor = document.getElementById('textColor');
-
 function textColours() {
-  if(localStorage.getItem('bgcolor') === '1')  {
+  localStorage.setItem('textColour', container.value);
+  if(localStorage.getItem('bgcolor') === 'white') {
+    span.style.color = 'black';
+    localStorage.setItem('textColour', container.value)
+    localStorage.setItem('bgcolor', container.value)
+  }
+}
+
+function textColoursBack() {
+  localStorage.setItem('textColour', container.value);
+  if(localStorage.getItem('bgcolor') === 'black')  {
     span.style.color = 'lightgrey'
+    localStorage.setItem('textColour', container.value);
   }
-}
-
-function coloursBack() {
-  localStorage.setItem('bgcolor', container.value);
-  if(localStorage.getItem('bgcolor') === '0') {
-    document.body.style.backgroundColor = 'white';
-    textColours2()
-  }
-}
-
-window.onload = function textColorTheme() {
-  document.body.style.color = 'black';
-  localStorage.setItem('textColour', 0)
 }
 
 function textColours2() {
@@ -48,12 +46,7 @@ function textColours2() {
   }
 }
 
-container.addEventListener('change', colours)
-container.addEventListener('change', coloursBack)
-
-let fontSizes = document.getElementById('fontSize');
-
-function fontSize() {
+function setFontSize() {
   localStorage.setItem('fontSize', fontSizes.value);
   if(localStorage.getItem('fontSize') === '0')  {
     span.style.fontSize = '16px'
@@ -63,10 +56,6 @@ function fontSize() {
     span.style.fontSize = '50px'
   }
 }
-
-fontSizes.addEventListener('change', fontSize)
-
-let textHeight = document.getElementById('textHeight');
 
 function spaceBeteweenLine() {
   localStorage.setItem('spaceLine', textHeight.value);
@@ -79,10 +68,6 @@ function spaceBeteweenLine() {
   }
 }
 
-textHeight.addEventListener('change', spaceBeteweenLine)
-
-let fontFamily = document.getElementById('fontStyle')
-
 function fontStyle() {
   localStorage.setItem('fontStyle', fontFamily.value);
   if(localStorage.getItem('fontStyle') === '0') {
@@ -92,8 +77,9 @@ function fontStyle() {
   }
 }
 
-fontFamily.addEventListener('change', fontStyle)
 
-
-
-
+container.addEventListener('change', colours);
+container.addEventListener('change', coloursBack);
+fontSizes.addEventListener('change', setFontSize);
+fontFamily.addEventListener('change', fontStyle);
+textHeight.addEventListener('change', spaceBeteweenLine);
