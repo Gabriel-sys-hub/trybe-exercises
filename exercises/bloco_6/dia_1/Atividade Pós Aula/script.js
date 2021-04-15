@@ -31,11 +31,10 @@ initialJobYear.addEventListener('change', () => {
   }
 });
 
-
 function generateStates() {
-  for (let index = 0; index < 4; index += 1) {
+  const states = ["AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RO", "RS", "RR", "SC", "SE", "SP", "TO"];
+  for (let index = 0; index < states.length; index += 1) {
     const optionState = document.createElement('option');
-    const states = ['Bahia', 'Dristito Federal', 'São Paulo', 'Rio de Janeiro']
     optionState.innerText = states[index];
     statesContainer.appendChild(optionState);
   }
