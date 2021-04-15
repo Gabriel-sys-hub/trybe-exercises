@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <form action="" method="get">
+    <fieldset class='dados-pessoais'>
+      <label for="user">Nome Completo</label><input type="text" name="usuario" required id="user" maxlength="40">
+      <label for="email">E-mail</label><input type="text" name="email" id="email" maxlength="50">
+      <label for="cpf">CPF</label><input type="text" name="cpf" id="cpf" maxlength="11" required>
+      <label for="endereco">Endereço</label><input type="text" name="endereco" id="endereo" maxlength="200" required>
+      <label for="cidade">Cidade</label><input type="text" name="cidade" id="cidade" maxlength="28" required>
+      <label for="estados">Selecione seu Estado</label>
+      <select name="estados" id="estados" required></select>
+    </fieldset>
+    <div id='notflex'>
+      <label for="casa">Casa</label><input type="radio" name="casa" id="casa" required>
+      <label for="ap">Apartamento</label><input type="radio" name="casa" id="ap" required>
+    </div>
+  </form>
+
+  <form action="" method="get">
+    <fieldset class='dados-pessoais'>
+      <textarea name="curriculo" id="curriculo" cols="30" rows="20" maxlength="1000"></textarea><label for="curriculo">Resumo do Curriculo</label>
+      <input type="text" name="cargo" id="cargo" maxlength="40"><label for="cargo">Cargo</label>
+      <input type="text" name="descricao-cargo" id="descricao-cargo" maxlength="500" required><label for="descricao-cargo">Descrição do Cargo</label>
+      <input type="number" name="data" value='1' id="data" maxlength="200" required><label for="data">Data Inicial</label>
+      <input type="number" value='1' name="mes" id="mes" maxlength="200" required><label for="mes">Mês Inicial</label>
+      <input type="number" name="ano" value='2021' id="ano" maxlength="200" required><label for="ano">Ano</label>
+    </fieldset>
+    <button id='submit'>Enviar Form</button>
+  </form>
+
+  <script src='script.js'></script>
+</body>
+</html>

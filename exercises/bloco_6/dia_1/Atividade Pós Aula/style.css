@@ -1,0 +1,19 @@
+.dados-pessoais {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 100px;
+}
+
+#notflex {
+  display:flex;
+  justify-content: center;
+  text-align: center;
+  margin: 30px;
+}
+
+.dados-pessoais input, select {
+  padding: 5px;
+  margin: 5px;
+  border: rgb(190, 190, 190) solid 1px;
+}
