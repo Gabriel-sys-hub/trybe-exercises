@@ -4,44 +4,48 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bulma.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
-  <link href="./node_modules/popup-validation/bin/validation.min.css" rel="stylesheet">
   <title>Document</title>
 </head>
 <body>
-
-  <h1 id='curriculo'>Curriculo</h1>
   <form id='form' action="" method="get">
-    <fieldset class='dados-pessoais'>
-      <label for="user">Nome Completo</label><input date-validate='required' class='form-control-lg validate' type="text" name="usuario" id="user" maxlength="40">
-      <label for="email">E-mail</label><input date-validate='required,email' class='form-control-lg validate' type="text" name="email" id="email" maxlength="50">
-      <label for="cpf">CPF</label><input date-validate='required' class='form-control-lg validate' type="text" name="cpf" id="cpf" maxlength="11">
-      <label for="endereco">Endereço</label><input date-validate='required' class='form-control-lg validate' type="text" name="endereco" id="endereo" maxlength="200">
-      <label for="cidade">Cidade</label><input date-validate='required' class='form-control-lg validate' type="text" name="cidade" id="cidade" maxlength="28">
-      <label for="estados">Selecione seu Estado</label>
-      <select class='form-select' name="estados" id="estados"></select>
+    <div class="container">
+      <div class='control'>
+      <h1 id='curriculo' class='is-size-1 has-text-centered'>Curriculo</h1>
+      <label class='label' for="user">Nome Completo</label>
+      <p class="control has-icons-left has-icons-right">
+        <input class='column is-12 block ' type="text" name="usuario" id="user" maxlength="40">
+      <span class="icon is-small is-left">
+        <i class="fas fa-envelope"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fas fa-check"></i>
+      </span>
+       </div>
+      </p>
+      <label class='label' for="email">E-mail</label><input date-validate='required,email' class='column is-12 block' type="text" name="email" id="email" maxlength="50">
+      <label class='label' for="cpf">CPF</label><input class='column is-12 block' type="text" name="cpf" id="cpf" maxlength="11">
+      <label class='label' for="endereco">Endereço</label><input class='column is-12 block' type="text" name="endereco" id="endereo" maxlength="200">
+      <label class='label' for="cidade">Cidade</label><input class='column is-12 block' type="text" name="cidade" id="cidade" maxlength="28">
+      <label class='label' for="estados">Selecione seu Estado</label>
+      <select class='column is-12 block' name="estados" id="estados"></select>
+      <legend class='is-size-3'>Qual seu tipo de moradia?</legend>
+      <div class="is-flex">
+      <label class='radio' for="casa"><input type="radio" name="casa" id="casa">Casa</label>
+      <label class='radio' for="ap"><input type="radio" name="casa" id="ap">Apartamento</label>
+      </div>   
+      <label class='label' for="curriculo">Resumo do Curriculo</label><textarea class='column is-12 block' name="curriculo" id="curriculo" cols="30" rows="20" maxlength="1000"></textarea>
+      <label class='label' for="cargo">Cargo</label><input class='column is-12 block' type="text" name="cargo" id="cargo" maxlength="40">
+      <label class='label' for="descricao-cargo">Descrição do Cargo</label><input class='column is-12 block' type="text" name="descricao-cargo" id="descricao-cargo" maxlength="500">
+      <label class='label' for='date'><i class="fas fa-clock"></i>Data de Inicio</label><input class='column is-12 block' type="date" name='date' id='date'>
+    <fieldset class='container has-text-centered mt-3 mb-3'>
+    <button id='submit' class='button is-link'>Enviar Form</button>
+    <button id='reset' type='reset' class='button is-danger'>Limpar</button>
     </fieldset>
-    <legend>Qual seu tipo de moradia?</legend>
-    <fieldset>
-      <input date-validate='required' class='form-check-input' type="radio" name="casa" id="casa"><label for="casa">Casa</label>
-      <input date-validate='required' class='form-check-input' type="radio" name="casa" id="ap"><label for="ap">Apartamento</label>   
-    </fieldset>
-    <fieldset class='dados-pessoais'>
-      <label for="curriculo">Resumo do Curriculo</label><textarea name="curriculo" id="curriculo" cols="30" rows="20" maxlength="1000"></textarea>
-      <label for="cargo">Cargo</label><input date-validate='required' class='form-control-lg validate' type="text" name="cargo" id="cargo" maxlength="40">
-      <label for="descricao-cargo">Descrição do Cargo</label><input date-validate='required' class='form-control-lg validate' type="text" name="descricao-cargo" id="descricao-cargo" maxlength="500">
-      <label for='date'>Data de Inicio</label><input date-validate='required' type="date" class='form-control' name='date' id='date'>
-    </fieldset>
-    <button id='submit' class='btn btn-primary'>Enviar Form</button>
+  </div>
   </form>
-
-  <div id='div'></div>
-
-  <script src="./node_modules/popup-validation/bin/validation.min.js"></script> 
   <script src="script.js"></script>
-  <script src="./jquery-3.6.0.min.js"></script>
-  <script src='./bootstrap-5.0.0-beta3-dist/js/bootstrap.min.js'></script>
-  <script src='./node_modules/just-validate/dist/js/just-validate.min.js'></script>
 </body>
 </html>
