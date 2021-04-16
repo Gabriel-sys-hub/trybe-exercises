@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let newTag = document.createElement('h1');
+      document.body.appendChild(newTag)
+      newTag.innerHTML = 'Exercício 5.2 - JavaScript DOM'
+      console.log(newTag)
+
+      let newDiv = document.createElement('div');
+      document.body.appendChild(newDiv)
+      newDiv.setAttribute('class', 'main-content');
+      console.log(newDiv)
+
+      let firstChild = document.createElement('div');
+      firstChild.setAttribute('class', 'center-content');
+      newDiv.appendChild(firstChild);
+
+      let tagP = document.createElement('p');
+      tagP.innerHTML = 'Hello World'
+      firstChild.appendChild(tagP);
+
+      let leftContent = document.createElement('div');
+      leftContent.setAttribute('class', 'left-content');
+      newDiv.appendChild(leftContent)
+
+      let rightContent = document.createElement('div');
+      rightContent.setAttribute('class', 'right-content');
+      newDiv.appendChild(rightContent)
+
+      let newImage = document.createElement('img');
+      newImage.setAttribute('class', 'small-image');
+      newImage.setAttribute('src', 'https://picsum.photos/200');
+      leftContent.appendChild(newImage);
+
+      let newUList = document.createElement('ul');
+      rightContent.appendChild(newUList);
+      for(var i = 1; i < 11; i += 1) {
+      let li = document.createElement('li');
+      li.innerHTML = i;
+      newUList.appendChild(li);
+      }
+
+      for(var i = 0; i < 3; i += 1) {
+      let h3 = document.createElement('h3');
+      newDiv.appendChild(h3);
+      }
+    </script>
+  </body>
+</html>
