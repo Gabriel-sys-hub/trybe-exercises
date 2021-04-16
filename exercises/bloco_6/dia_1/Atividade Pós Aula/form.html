@@ -4,38 +4,44 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
+  <link href="./node_modules/popup-validation/bin/validation.min.css" rel="stylesheet">
   <title>Document</title>
 </head>
 <body>
-  <form action="" method="get">
+
+  <h1 id='curriculo'>Curriculo</h1>
+  <form id='form' action="" method="get">
     <fieldset class='dados-pessoais'>
-      <label for="user">Nome Completo</label><input type="text" name="usuario" required id="user" maxlength="40">
-      <label for="email">E-mail</label><input type="text" name="email" id="email" maxlength="50">
-      <label for="cpf">CPF</label><input type="text" name="cpf" id="cpf" maxlength="11" required>
-      <label for="endereco">Endereço</label><input type="text" name="endereco" id="endereo" maxlength="200" required>
-      <label for="cidade">Cidade</label><input type="text" name="cidade" id="cidade" maxlength="28" required>
+      <label for="user">Nome Completo</label><input date-validate='required' class='form-control-lg validate' type="text" name="usuario" id="user" maxlength="40">
+      <label for="email">E-mail</label><input date-validate='required,email' class='form-control-lg validate' type="text" name="email" id="email" maxlength="50">
+      <label for="cpf">CPF</label><input date-validate='required' class='form-control-lg validate' type="text" name="cpf" id="cpf" maxlength="11">
+      <label for="endereco">Endereço</label><input date-validate='required' class='form-control-lg validate' type="text" name="endereco" id="endereo" maxlength="200">
+      <label for="cidade">Cidade</label><input date-validate='required' class='form-control-lg validate' type="text" name="cidade" id="cidade" maxlength="28">
       <label for="estados">Selecione seu Estado</label>
-      <select name="estados" id="estados" required></select>
+      <select class='form-select' name="estados" id="estados"></select>
     </fieldset>
-    <div id='notflex'>
-      <label for="casa">Casa</label><input type="radio" name="casa" id="casa" required>
-      <label for="ap">Apartamento</label><input type="radio" name="casa" id="ap" required>
-    </div>
-  </form>
-
-  <form action="" method="get">
+    <legend>Qual seu tipo de moradia?</legend>
+    <fieldset>
+      <input date-validate='required' class='form-check-input' type="radio" name="casa" id="casa"><label for="casa">Casa</label>
+      <input date-validate='required' class='form-check-input' type="radio" name="casa" id="ap"><label for="ap">Apartamento</label>   
+    </fieldset>
     <fieldset class='dados-pessoais'>
-      <textarea name="curriculo" id="curriculo" cols="30" rows="20" maxlength="1000"></textarea><label for="curriculo">Resumo do Curriculo</label>
-      <input type="text" name="cargo" id="cargo" maxlength="40"><label for="cargo">Cargo</label>
-      <input type="text" name="descricao-cargo" id="descricao-cargo" maxlength="500" required><label for="descricao-cargo">Descrição do Cargo</label>
-      <input type="number" name="data" value='1' id="data" maxlength="200" required><label for="data">Data Inicial</label>
-      <input type="number" value='1' name="mes" id="mes" maxlength="200" required><label for="mes">Mês Inicial</label>
-      <input type="number" name="ano" value='2021' id="ano" maxlength="200" required><label for="ano">Ano</label>
+      <label for="curriculo">Resumo do Curriculo</label><textarea name="curriculo" id="curriculo" cols="30" rows="20" maxlength="1000"></textarea>
+      <label for="cargo">Cargo</label><input date-validate='required' class='form-control-lg validate' type="text" name="cargo" id="cargo" maxlength="40">
+      <label for="descricao-cargo">Descrição do Cargo</label><input date-validate='required' class='form-control-lg validate' type="text" name="descricao-cargo" id="descricao-cargo" maxlength="500">
+      <label for='date'>Data de Inicio</label><input date-validate='required' type="date" class='form-control' name='date' id='date'>
     </fieldset>
-    <button id='submit'>Enviar Form</button>
+    <button id='submit' class='btn btn-primary'>Enviar Form</button>
   </form>
 
-  <script src='script.js'></script>
+  <div id='div'></div>
+
+  <script src="./node_modules/popup-validation/bin/validation.min.js"></script> 
+  <script src="script.js"></script>
+  <script src="./jquery-3.6.0.min.js"></script>
+  <script src='./bootstrap-5.0.0-beta3-dist/js/bootstrap.min.js'></script>
+  <script src='./node_modules/just-validate/dist/js/just-validate.min.js'></script>
 </body>
 </html>
