@@ -25,7 +25,13 @@
       </span>
        </div>
       </p>
-      <label class='label' for="email">E-mail</label><input date-validate='required,email' class='column is-12 block' type="text" name="email" id="email" maxlength="50">
+      <label class='label' for="email">E-mail</label>
+      
+      
+      <input data-validate='required, email' class='column is-12 block validate' type="text" name="email" id="email" maxlength="50">
+
+
+    
       <label class='label' for="cpf">CPF</label><input class='column is-12 block' type="text" name="cpf" id="cpf" maxlength="11">
       <label class='label' for="endereco">Endereço</label><input class='column is-12 block' type="text" name="endereco" id="endereo" maxlength="200">
       <label class='label' for="cidade">Cidade</label><input class='column is-12 block' type="text" name="cidade" id="cidade" maxlength="28">
@@ -46,6 +52,7 @@
     </fieldset>
   </div>
   </form>
-  <script src="script.js"></script>
+  <script src="./popup-validation/bin/validation.min.js"></script>
+  <script src='script.js'></script>
 </body>
 </html>
