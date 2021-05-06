@@ -1,3 +1,4 @@
+
 const assert = require('assert');
 
 const books = [
@@ -63,15 +64,16 @@ const books = [
   },
 ];
 
-const expectedResult = 'O Senhor dos Anéis';
 
-function authorWith3DotsOnName() {
-  return books
-  .find((book) => (
-    book.author.name
-    .split(' ')
-    .filter((word) => word.endsWith('.')).length === 3
-  )).name;
+const reduceNames = (acc, book, index, array) => {
+  console.log(index)
+  console.log(array.length)
+  if (index === array.length - 1) return `${acc} ${book.author.name}.`;
+  return `${acc} ${book.author.name},`;
+};
+
+function allNames() {
+  return books.reduce(reduceNames, 'Nomes:');
 }
 
-assert.deepStrictEqual(authorWith3DotsOnName(), expectedResult);
+assert.deepStrictEqual(allNames(), 'Nomes: George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.');
