@@ -10,9 +10,10 @@ const temperatureInFahrenheit = (temperature) => console.log(`It is currently ${
 const greet = (temperature) => console.log(`Hi there! Curiosity here. Right now is ${temperature}ºC at Mars`);
 
 // definição da função sendMarsTemperature...
-const sendMarsTemperature = () => {
-  console.log(`It is currentry ${temperatureInFahrenheit}`)
-}
+const sendMarsTemperature = (onSuccess) => {
+  const currentTemperature = getMarsTemperature();
+  setTimeout(() => onSuccess(currentTemperature), messageDelay());
+};
 
 
 sendMarsTemperature(temperatureInFahrenheit); // imprime "It is currently 47ºF at Mars", por exemplo
