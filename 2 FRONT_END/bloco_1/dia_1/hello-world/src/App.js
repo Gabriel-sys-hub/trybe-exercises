@@ -1,5 +1,3 @@
-import ReactDOM from 'react-dom';
-
 const arrayTasks = ['Wake up', 'Wash teth', 'Eat', 'Play a Game', 'Study', 'Lunch']
 
 const mario = {
@@ -29,7 +27,5 @@ const App = () => {
       </>
   );
 }
-
-ReactDOM.render(App, document.getElementById('root'))
 
 export default App;
