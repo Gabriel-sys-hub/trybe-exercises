@@ -1,9 +1,20 @@
 import React from 'react';
+import Pokedex from './pokedex'
 
-class Image extends React.Component {
+class App extends React.Component {
   render() {
-    return <img src={this.props.source} alt={this.props.alternativeText} />;
+    return (
+      <Pokedex />
+    )
   }
 }
 
-export default Image;
+// class Image extends React.Component {
+//   render() {
+//     return <img src={this.props.source} alt={this.props.alternativeText} />;
+//   }
+// }
+
+// export default Image
+
+export default App;
