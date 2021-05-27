@@ -16,7 +16,7 @@ class Button extends React.Component {
    }
   render () {
     return (
-        <button onClick={this.btn}>{this.state.numeroDeCliques}</button>
+        <button onClick={this.btn} style={ this.state.numeroDeCliques % 2 === 0 ? { color: 'green'} : { color: 'red' }}>{this.state.numeroDeCliques}</button>
     );
   };
 }
