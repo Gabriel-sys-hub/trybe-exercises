@@ -2,18 +2,21 @@ import React from 'react';
 
 class Button extends React.Component {
    constructor() {
-     super();
-     this.btn = this.btn.bind(this);
+     super(); // faz com que nossa função sobrescreva a original;
+     this.state = {
+       numeroDeCliques: 0
+     }
+     this.btn = this.btn.bind(this); // garante acesso ao this dentro da função BTN;
    }
 
    btn() {
-     console.log('hello')
+    this.setState((estadoAnterior, _props) => ({
+      numeroDeCliques: estadoAnterior.numeroDeCliques + 1
+    }))
    }
   render () {
     return (
-      <section>
-        <button onClick={this.btn}>BOTÃO</button>
-      </section>
+        <button onClick={this.btn}>{this.state.numeroDeCliques}</button>
     );
   };
 }
