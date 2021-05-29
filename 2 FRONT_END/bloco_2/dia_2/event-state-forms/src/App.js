@@ -1,12 +1,24 @@
 import React from "react";
 import Fieldset from "./components/Fieldset";
-import Button from './components/Button'
+import ClearButton from './components/ClearButton'
+import { Form } from 'react-bootstrap';
+import './styles/App.css'
 
 class App extends React.Component {
   constructor() {
     super();
     this.verifyCity = this.verifyCity.bind(this);
     this.upperCase = this.upperCase.bind(this);
+    this.saveData = this.saveData.bind(this);
+
+    this.state = {
+      Nome: '',
+      Email: '',
+      CPF: '',
+      Endereco: '',
+      Cidade: '',
+      Estado: '',
+    }
   }
 
   createDiv = ({target}) => {
@@ -24,9 +36,16 @@ class App extends React.Component {
     }
   }
 
+  saveData({ target }) {
+    const { name } = target
+    this.setState({
+      [name]: target.value,
+    });
+  }
+
   verifyCity({target}) {
     if (target.value.match(/^[0-9]*$/)) {
-      target.value = "";
+      target.value = target.value = '';
     }
   }
 
@@ -36,16 +55,16 @@ class App extends React.Component {
 
   render() {
     return (
-      <form className="App">
+      <Form className="App">
         <Fieldset
           verifyCity={this.verifyCity}
           onMouseEnter={this.onMouseEnter}
           upperCase={this.upperCase}
           removeSpecialCharacter={this.removeSpecialCharacter}
-
+          saveData={this.saveData}
         />
-        <Button />
-      </form>
+        <ClearButton />
+      </Form>
     );
   }
 }
