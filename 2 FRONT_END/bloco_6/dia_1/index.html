@@ -17,19 +17,26 @@
     <button id="decrement">-</button>
     <input type="text" id="quantity"></input>
     <button onclick="incrementBy10()">+10</button>
+    <p><span id="clickCount">0</span> vezes clicadas</p>
   </div>
   <script>
     //um arquivo store.js
     const store = Redux.createStore(contadorReducer)
 
     // outro arquivo /reducers/contador.js
-    function contadorReducer(state = 0, action) {
+    function contadorReducer(state = { contador: 0, clickCount: 0 }, action) {
       switch (action.type) {
         case 'INCREMENT':
-          return state + action.value
+          return {
+            contador: state.contador + action.value,
+            clickCount: state.clickCount + action.click,
+          }
           break;
         case 'DECREMENT':
-          return state - action.value
+          return {
+            contador: state.contador - action.value,
+            clickCount: state.clickCount + action.click,
+          }
         default:
           return state
           break;
@@ -53,9 +60,13 @@
       });
     })
     // Non existe no react
-    store.subscribe(() => document.getElementById('value').innerHTML =
-      store.getState())
-
+    store.subscribe(
+        () => {
+          console.log(store.getState())
+          document.getElementById('value').innerHTML = store.getState().contador
+          document.getElementById('clickCount').innerHTML = store.getState().clickCount
+        }
+      );
   </script>
 </body>
 
