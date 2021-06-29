@@ -24,18 +24,20 @@
     const store = Redux.createStore(contadorReducer)
 
     // outro arquivo /reducers/contador.js
-    function contadorReducer(state = { contador: 0, clickCount: 0 }, action) {
+    function contadorReducer(state = { counter: 0, clickCount: 0, arrayCounter: [] }, action) {
       switch (action.type) {
         case 'INCREMENT':
           return {
-            contador: state.contador + action.value,
+            counter: state.counter + action.value,
             clickCount: state.clickCount + action.click,
+            arrayCounter: ([...state.arrayCounter, state.counter + action.value]||[state.counter + action.value])
           }
           break;
         case 'DECREMENT':
           return {
-            contador: state.contador - action.value,
+            counter: state.counter - action.value,
             clickCount: state.clickCount + action.click,
+            arrayCounter: ([...state.arrayCounter, state.counter + action.value]||[state.counter + action.value])
           }
         default:
           return state
@@ -63,7 +65,7 @@
     store.subscribe(
         () => {
           console.log(store.getState())
-          document.getElementById('value').innerHTML = store.getState().contador
+          document.getElementById('value').innerHTML = store.getState().counter
           document.getElementById('clickCount').innerHTML = store.getState().clickCount
         }
       );
