@@ -11,7 +11,6 @@ function calculaImc () {
 
   console.log(`IMC: ${imc}`);
 
-
   if (imc < 18.5) {
     console.log('Situação: Abaixo do peso (magreza)');
     return;
