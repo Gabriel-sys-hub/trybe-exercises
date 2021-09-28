@@ -4,7 +4,7 @@
   "description": "",
   "main": "checkNumber.js",
   "scripts": {
-    "start": "node fixacao.js",
+    "start": "node createAFile.js",
     "test": "mocha tests"
   },
   "author": "Gabriel",
